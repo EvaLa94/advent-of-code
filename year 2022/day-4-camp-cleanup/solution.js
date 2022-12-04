@@ -4,6 +4,17 @@ const fileName = 'input.txt'
 const data = fs.readFileSync(fileName, { encoding: 'utf8' }).split('\n');
 
 // First part
+/*
+LOGIC
+  1 ---- 2
+3 -------- 4
+1 > 3 and 2 < 4
+
+1 -------- 2
+  3 ---- 4
+1 < 3 and 2 > 4
+*/
+
 function checkPair(pair){
   const first = +pair.slice(0, pair.indexOf('-'));
   const second = +pair.slice(pair.indexOf('-')+1, pair.indexOf(','));
@@ -29,6 +40,17 @@ function findContainedPairs(array){
 console.log('First part solution:', findContainedPairs(data));
 
 // Second part
+/*
+LOGIC
+1 --- 2
+        3 --- 4
+2 < 3
+
+        1 --- 2
+3 --- 4
+4 < 1
+*/
+
 function checkOverlappingPair(pair){
   const first = +pair.slice(0, pair.indexOf('-'));
   const second = +pair.slice(pair.indexOf('-')+1, pair.indexOf(','));
