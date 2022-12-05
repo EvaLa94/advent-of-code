@@ -62,16 +62,4 @@ So, in this example, the number of overlapping assignment pairs is 4.
 
 In how many assignment pairs do the ranges overlap?
 
-``` ruby
-000
-```
-
-Description
-
-```
-000
-```
-
-Description
-
-Your puzzle answer was  `0000`.
+Your puzzle answer was  `833`.

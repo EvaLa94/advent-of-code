@@ -4,6 +4,7 @@ const fileName = 'input.txt'
 const data = fs.readFileSync(fileName, { encoding: 'utf8' }).split('\n');
 
 // First part
+
 /*
 LOGIC
   1 ---- 2
@@ -14,12 +15,12 @@ LOGIC
   3 ---- 4
 1 < 3 and 2 > 4
 */
-
 function checkPair(pair){
-  const first = +pair.slice(0, pair.indexOf('-'));
-  const second = +pair.slice(pair.indexOf('-')+1, pair.indexOf(','));
-  const third = +pair.slice(pair.indexOf(',')+1, pair.lastIndexOf('-'));
-  const forth = +pair.slice(pair.lastIndexOf('-')+1);
+  const pairArray = pair.split(/-|,/gm);
+  const first = +pairArray[0];
+  const second = +pairArray[1];
+  const third = +pairArray[2];
+  const forth = +pairArray[3];
     if((first <= third && second >= forth) || (first >= third && second <= forth)){
       return true;
     } else {
@@ -52,10 +53,11 @@ LOGIC
 */
 
 function checkOverlappingPair(pair){
-  const first = +pair.slice(0, pair.indexOf('-'));
-  const second = +pair.slice(pair.indexOf('-')+1, pair.indexOf(','));
-  const third = +pair.slice(pair.indexOf(',')+1, pair.lastIndexOf('-'));
-  const forth = +pair.slice(pair.lastIndexOf('-')+1);
+  const pairArray = pair.split(/-|,/gm);
+  const first = +pairArray[0];
+  const second = +pairArray[1];
+  const third = +pairArray[2];
+  const forth = +pairArray[3];
     if((second < third) || forth < first){
       return false;
     } else {
